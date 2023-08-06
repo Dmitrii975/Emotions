@@ -50,31 +50,27 @@ x_dataset = np.array(x_dataset)
 np.random.shuffle(x_dataset)
 y_dataset = np.array(y_dataset)
 
-#model = Sequential()
-#model.add(Conv2D(128, (3,3), input_shape=(200,200,1), activation='relu'))
-#model.add(MaxPooling2D((2,2)))
+model = Sequential()
+model.add(Conv2D(128, (3,3), input_shape=(200,200,1), activation='relu'))
+model.add(MaxPooling2D((2,2)))
 
-#model.add(Dropout(0.2))
-#model.add(Flatten())
+model.add(Dropout(0.2))
+model.add(Flatten())
 
-#model.add(Dense(128, activation='relu'))
-#model.add(LeakyReLU())
+model.add(Dense(128, activation='relu'))
+model.add(LeakyReLU())
 
-#model.add(Dropout(0.2))
+model.add(Dropout(0.2))
 
-#model.add(Dense(64, activation='relu'))
-#model.add(LeakyReLU())
+model.add(Dense(64, activation='relu'))
+model.add(LeakyReLU())
 
-#model.add(Dense(3, activation='softmax'))
+model.add(Dense(3, activation='softmax'))
 
-#model.compile(loss='categorical_crossentropy', metrics=['accuracy'], optimizer='adam')
-#model.build((200,200,1))
+model.compile(loss='categorical_crossentropy', metrics=['accuracy'], optimizer='adam')
+model.build((200,200,1))
 
-#model.summary()
-#model.fit(x_dataset, y_dataset, epochs=10, batch_size = 32)
-#model.save('C:\\Users\\Dmitry\\Desktop\\cv_model.keras')
+model.summary()
+model.fit(x_dataset, y_dataset, epochs=10, batch_size = 32)
 
-model = load_model('C:\\Users\\Dmitry\\Desktop\\cv_model.keras')
-data = prepare_image('C:\\Users\\Dmitry\\Desktop\\1.jpg')
-data = np.expand_dims(data, 0)
-print(model.predict(data))
+
